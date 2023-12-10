@@ -9,6 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
 
+
 @SpringBootApplication
 public class CrudDemoApplication {
 
@@ -22,8 +23,17 @@ public class CrudDemoApplication {
             // createInstructor(appDao);
             // findInstructor(appDao);
             // deleteInstructor(appDao);
-            findInstructorDetail(appDao);
+            // findInstructorDetail(appDao);
+             deleteInstructorDetail(appDao);
         };
+    }
+
+    private void deleteInstructorDetail(AppDao appDao) {
+        int theId = 6;
+        System.out.println("Deleting instructor detail id: " + theId);
+
+        appDao.deleteInstructorDetailById(theId);
+        System.out.println("Done !!!");
     }
 
     private void findInstructorDetail(AppDao appDao) {
