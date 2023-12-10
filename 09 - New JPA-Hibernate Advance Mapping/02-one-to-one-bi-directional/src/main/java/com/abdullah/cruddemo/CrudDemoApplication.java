@@ -8,6 +8,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
+
 @SpringBootApplication
 public class CrudDemoApplication {
 
@@ -20,8 +21,25 @@ public class CrudDemoApplication {
         return runner -> {
             // createInstructor(appDao);
             // findInstructor(appDao);
-             deleteInstructor(appDao);
+            // deleteInstructor(appDao);
+            findInstructorDetail(appDao);
         };
+    }
+
+    private void findInstructorDetail(AppDao appDao) {
+        // get the instructor detail object
+
+        int theId = 2;
+        InstructorDetail instructorDetail = appDao.findInstructorDetailById(theId);
+
+        // print the instructor detail
+        System.out.println("tempInstructorDetail: " + instructorDetail);
+        // print the associated instructor
+
+        System.out.println("the associated instructor: " + instructorDetail.getInstructor());
+
+        System.out.println("Done !!!");
+
     }
 
     private void deleteInstructor(AppDao appDao) {
