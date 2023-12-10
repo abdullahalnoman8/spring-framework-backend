@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 public class AppDaoImpl implements AppDao {
 
     // define field for entity manager
-    private EntityManager entityManager;
+    private final EntityManager entityManager;
 
     // inject entity manager using constructor injection
 

@@ -20,12 +20,12 @@ public class CrudDemoApplication {
         return runner -> {
             // createInstructor(appDao);
             // findInstructor(appDao);
-            deleteInstructor(appDao);
+             deleteInstructor(appDao);
         };
     }
 
     private void deleteInstructor(AppDao appDao) {
-        int theId = 1;
+        int theId = 4;
         System.out.println("Deleteing instructor id: " + theId);
 
         appDao.deleteInstructorById(theId);
