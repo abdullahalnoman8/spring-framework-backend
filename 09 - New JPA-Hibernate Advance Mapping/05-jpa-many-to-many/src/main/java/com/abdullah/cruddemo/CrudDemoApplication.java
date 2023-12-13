@@ -1,10 +1,7 @@
 package com.abdullah.cruddemo;
 
 import com.abdullah.cruddemo.dao.AppDao;
-import com.abdullah.cruddemo.entity.Course;
-import com.abdullah.cruddemo.entity.Instructor;
-import com.abdullah.cruddemo.entity.InstructorDetail;
-import com.abdullah.cruddemo.entity.Review;
+import com.abdullah.cruddemo.entity.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -42,9 +39,33 @@ public class CrudDemoApplication {
             // many-to-many-uni directional
             // createCourseAndReview(appDao);
             // retrieveCourseAndReviews(appDao);
-            deleteCourseAndReviews(appDao);
+            // deleteCourseAndReviews(appDao);
+            createCourseAndStudents(appDao);
 
         };
+    }
+
+    private void createCourseAndStudents(AppDao appDao) {
+        // create a course
+        Course tempCourse = new Course("Pacman - How To Score One Million Points");
+        // create the students
+        Student tempStudent = new Student("John","Doe", "john@abc.com");
+        Student tempStudent2 = new Student("Oliver","Queen", "oliver@abc.com");
+        Student tempStudent3 = new Student("Henry","Welson", "henri@abc.com");
+        // add students to the course
+
+        tempCourse.addStudent(tempStudent);
+        tempCourse.addStudent(tempStudent2);
+        tempCourse.addStudent(tempStudent3);
+
+        // save the associated course and students
+
+        System.out.println("Saving the course: " + tempCourse);
+        System.out.println("Associated students: " + tempCourse.getStudents());
+
+        appDao.save(tempCourse);
+
+        System.out.println("Done !!!!");
     }
 
     private void deleteCourseAndReviews(AppDao appDao) {
