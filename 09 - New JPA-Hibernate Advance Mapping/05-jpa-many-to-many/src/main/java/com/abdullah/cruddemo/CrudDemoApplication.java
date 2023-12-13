@@ -40,9 +40,21 @@ public class CrudDemoApplication {
             // createCourseAndReview(appDao);
             // retrieveCourseAndReviews(appDao);
             // deleteCourseAndReviews(appDao);
-            createCourseAndStudents(appDao);
+            // createCourseAndStudents(appDao);
+            findCourseAndStudents(appDao);
 
         };
+    }
+
+    private void findCourseAndStudents(AppDao appDao) {
+        int theId = 10;
+
+        Course course = appDao.findCourseAndStudentsByCourseId(theId);
+
+        System.out.println("Load Course: " + course);
+        System.out.println("Students: " + course.getStudents());
+
+        System.out.println("Done !!!!");
     }
 
     private void createCourseAndStudents(AppDao appDao) {
