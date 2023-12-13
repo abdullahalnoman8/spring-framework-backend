@@ -41,9 +41,18 @@ public class CrudDemoApplication {
 
             // many-to-many-uni directional
             // createCourseAndReview(appDao);
-            retrieveCourseAndReviews(appDao);
+            // retrieveCourseAndReviews(appDao);
+            deleteCourseAndReviews(appDao);
 
         };
+    }
+
+    private void deleteCourseAndReviews(AppDao appDao) {
+        int theId = 10;
+
+        System.out.println("Deleting course id: " + theId);
+        appDao.deleteCourseById(theId);
+        System.out.println("Done !!!");
     }
 
     private void retrieveCourseAndReviews(AppDao appDao) {
