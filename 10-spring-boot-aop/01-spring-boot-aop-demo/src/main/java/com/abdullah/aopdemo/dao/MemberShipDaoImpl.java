@@ -8,4 +8,10 @@ public class MemberShipDaoImpl implements MemberShipDao{
     public void addAccount() {
         System.out.println(getClass() + " : DOING MY DB WORK: ADDING a Membership ACCOUNT");
     }
+
+    @Override
+    public boolean addSillyMember() {
+        System.out.println(getClass() + " : DOING MY DB WORK: ADDING a Silly Member from Membership class");
+        return false;
+    }
 }

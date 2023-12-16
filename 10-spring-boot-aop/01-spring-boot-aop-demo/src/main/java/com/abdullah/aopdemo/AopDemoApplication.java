@@ -32,10 +32,7 @@ public class AopDemoApplication {
 		// call the membership business method
 		theMemberShipDao.addAccount();
 
-		// do it again!!
-		System.out.println("\n let's call it again!\n");
-
-		// call the business method again
-		theAccountDao.addAccount();
+		System.out.println();
+	    theMemberShipDao.addSillyMember();
 	}
 }
