@@ -1,5 +1,7 @@
 package com.abdullah.aopdemo.dao;
 
+import com.abdullah.aopdemo.Account;
+
 public interface AccountDao {
-    void addAccount();
+    void addAccount(Account theAccount);
 }

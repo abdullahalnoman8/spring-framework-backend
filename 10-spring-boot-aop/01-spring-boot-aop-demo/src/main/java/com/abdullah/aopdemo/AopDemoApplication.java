@@ -26,7 +26,9 @@ public class AopDemoApplication {
 	private void demoTheBeforeAdvice(AccountDao theAccountDao, MemberShipDao theMemberShipDao) {
 		// call the business method
 
-		theAccountDao.addAccount();
+		Account account = new Account();
+
+		theAccountDao.addAccount(account);
 
 
 		// call the membership business method
