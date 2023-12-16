@@ -28,8 +28,9 @@ public class AopDemoApplication {
 
 		Account account = new Account();
 
-		theAccountDao.addAccount(account);
+		theAccountDao.addAccount(account, true);
 
+		System.out.println();
 
 		// call the membership business method
 		theMemberShipDao.addAccount();
