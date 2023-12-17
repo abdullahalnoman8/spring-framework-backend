@@ -4,7 +4,13 @@
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                    https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
 
-    <include file="/db/changelog/changes/create-person-table-changelog-1.xml"/>
-    <include file="/db/changelog/changes/insert-person-table-changelog-2.xml"/>
-    <include file="/db/changelog/changes/update-person-table-precondition-3.xml"/>
+    <changeSet id="3" author="admin">
+        <preConditions>
+            <dbms type="h2"/>
+        </preConditions>
+        <update tableName="person">
+            <column name="address" value="India"/>
+            <where>name ='Oliver Queen'</where>
+        </update>
+    </changeSet>
 </databaseChangeLog>
