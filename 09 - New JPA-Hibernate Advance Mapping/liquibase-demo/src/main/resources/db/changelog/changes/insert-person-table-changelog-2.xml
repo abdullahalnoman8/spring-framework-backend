@@ -4,6 +4,11 @@
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                    https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
 
-    <include file="/db/changelog/changes/create-person-table-changelog-1.xml"/>
-    <include file="/db/changelog/changes/insert-person-table-changelog-2.xml"/>
+    <changeSet id="2" author="admin">
+        <insert tableName="person">
+            <column name="id" valueNumeric="1"/>
+            <column name="name" value="Oliver Queen"/>
+            <column name="address" value="USA"/>
+        </insert>
+    </changeSet>
 </databaseChangeLog>
